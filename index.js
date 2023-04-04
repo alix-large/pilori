@@ -1,6 +1,9 @@
 import express from 'express';
 import * as dotenv from "dotenv";
 import session from 'express-session';
+
+import router from './app/router.js';
+
 dotenv.config();
 
 const port = process.env.PORT || 3000;
@@ -11,6 +14,7 @@ app.set('views', './app/views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./inte-pilori/public'));
+app.use(router);
 
 app.use(session({
     resave: true, // la session est réenregistrée meme si elle n'est pas modifiée
