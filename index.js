@@ -3,10 +3,11 @@ import * as dotenv from "dotenv";
 import session from 'express-session';
 import validator from 'validator';
 import WebSite from './app/models/Website.js';
+import WebSites from './app/data/websites.js';
 
 const test = new WebSite('fssd', 'ce site blabla', 'https://github.com/', 'mobile', 'grave');
 console.log(test.title);
-
+console.log(WebSites);
 
 import router from './app/router.js';
 

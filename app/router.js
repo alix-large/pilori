@@ -1,6 +1,6 @@
 import express from 'express';
 import mainController from './controllers/mainController.js';
-import sitesController from './controllers/sitesController.js';
+import websitesController from './controllers/websitesController.js';
 import userController from './controllers/userController.js';
 import authController from './controllers/authController.js';
 
@@ -10,18 +10,17 @@ router.get('/', mainController.home);
 router.get('/mentions-legales', mainController.notices)
 router.get('/plan', mainController.map)
 router.get('/contact', mainController.contact)
-router.get('/tomates', sitesController.tomatoes)
-router.get('/tomates/denoncer', userController.denouncePage)
-router.post('/tomates/denoncer', userController.denounceAction)
-router.get('/tomates/:slug', sitesController.detail)
+router.get('/tomates', websitesController.list)
+router.get('/tomates/denoncer', websitesController.denouncePage)
+router.post('/tomates/denoncer', websitesController.denounceAction)
+router.get('/tomates/:slug', websitesController.detail)
 
-router.get('/connexion', userController.logginPage)
-router.post('/connexion', userController.logginAction)
+router.get('/connexion', authController.logginPage)
+router.post('/connexion', authController.logginAction)
+router.get('/inscription', authController.signupPage)
+router.post('/inscription', authController.signupAction)
+router.get('/deconnexion', authController.loggoutPage)
 
-router.get('/inscription', userController.signupPage)
-router.post('/inscription', userController.signupAction)
-
-router.get('/deconnexion', userController.loggoutPage)
 router.get('/profil', userController.profilPage)
 
 
