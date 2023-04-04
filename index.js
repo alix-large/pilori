@@ -1,6 +1,13 @@
 import express from 'express';
 import * as dotenv from "dotenv";
 import session from 'express-session';
+import validator from 'validator';
+import WebSite from './app/models/Website.js';
+
+const test = new WebSite('', 'ce site blabla', '123htp', 'mobile', 'grave');
+
+console.log(test.address);
+
 
 import router from './app/router.js';
 
