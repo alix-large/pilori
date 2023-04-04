@@ -1,0 +1,25 @@
+{
+  "name": "s06-pilori-alix-large",
+  "version": "1.0.0",
+  "description": "Cette saison on a vu comment créer des serveur HTTP et comment faire un site dynamique en respectant l'architecture MVC.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start" : "node index",
+    "dev" :"node-dev index --notify=false --clear"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-DWA-Session1/S06-pilori-alix-large.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-DWA-Session1/S06-pilori-alix-large/issues"
+  },
+  "homepage": "https://github.com/O-clock-DWA-Session1/S06-pilori-alix-large#readme",
+  "devDependencies": {
+    "node-dev": "^8.0.0"
+  }
+}
