@@ -4,9 +4,8 @@ import session from 'express-session';
 import validator from 'validator';
 import WebSite from './app/models/Website.js';
 
-const test = new WebSite('', 'ce site blabla', '123htp', 'mobile', 'grave');
-
-console.log(test.address);
+const test = new WebSite('fssd', 'ce site blabla', 'https://github.com/', 'mobile', 'grave');
+console.log(test.title);
 
 
 import router from './app/router.js';
