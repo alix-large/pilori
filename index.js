@@ -10,6 +10,7 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('./inte-pilori/public'));
 
 app.use(session({
     resave: true, // la session est réenregistrée meme si elle n'est pas modifiée
