@@ -5,18 +5,28 @@ const mainController = {
         res.render('list', { 
             websites : websites.slice(0, 2), 
         });
+        console.log(websites);
     },
 
     notices: function(req, res) {
-        res.send('test route/notices');
+        res.render('construction', {
+            websites,
+            title : 'Mentions légales',
+        });
     },
 
     map:function(req, res) {
-        res.send('test route/map');
+        res.render('construction', {
+            websites,
+            title : 'Plan du site',
+        });
     },
 
     contact:function(req, res) {
-        res.send('test route/contact');
+        res.render('construction', {
+            websites,
+            title:'Contact',
+        });
     }
 
 };
