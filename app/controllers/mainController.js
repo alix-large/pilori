@@ -3,7 +3,7 @@ import websites from "../data/websites.js";
 const mainController = {
     home: function(req, res) {
         res.render('list', { 
-            websites : websites.slice(0, 2), 
+            websites : websites.slice(0, 3), 
         });
         console.log(websites);
     },
