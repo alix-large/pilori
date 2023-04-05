@@ -8,7 +8,7 @@ import router from './app/router.js'
 import websites from './app/data/websites.js';
 
 // console.log(websites);
-console.log(websites[3].title);
+// console.log(websites[3].title);
 
 dotenv.config();
 

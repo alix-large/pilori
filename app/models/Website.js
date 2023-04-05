@@ -38,7 +38,7 @@ class WebSite {
 
     // tests de validation des données
     set title(value) {
-        console.log(value);
+        // console.log(value);
         if (typeof value !== 'string' || value.length === 0) {
             throw new Error('Le nom doit être une chaîne de caractère non vide');
         }

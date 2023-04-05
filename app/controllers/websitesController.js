@@ -1,11 +1,25 @@
 import websites from "../data/websites.js";
 
+console.log(websites);
+
 const websitesController = {
     all: function(req, res) {
-        res.render('listing', {
-            websites,
-            title : 'Tous les sites'
-        });
+
+        if (req.query.search) {
+            const filteredWebsites = websites.filter(element => element.title.toLowerCase().includes(req.query.search.toLowerCase()));
+            console.log(req.query.search, filteredWebsites);
+            res.render('listing', {
+                websites : filteredWebsites,
+                title : 'Résultats',
+            });
+            console.log(filteredWebsites);
+        }
+        else {
+            res.render('listing', {
+                websites,
+                title : 'Tous les sites',
+            });
+        }
     },
 
     //fiaire un eroute paramétrée

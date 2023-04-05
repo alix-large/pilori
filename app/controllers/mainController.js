@@ -5,7 +5,6 @@ const mainController = {
         res.render('list', { 
             websites : websites.slice(0, 3), 
         });
-        console.log(websites);
     },
 
     notices: function(req, res) {
@@ -27,8 +26,13 @@ const mainController = {
             websites,
             title:'Contact',
         });
-    }
+    },
 
+    notFound:function(req, res) {
+        res.status(404).render('error', {
+            message: 'La page demandée n\'a pas été trouvée.',
+        });
+    }
 };
 
 export default mainController;

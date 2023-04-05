@@ -1,17 +1,21 @@
 <article class="card">
     <div class="card-tags">
+        <% if (website.level) { %>
         <span class="card-tag">
             <%= website.level %>
         </span>
+        <% } %>
         <span class="card-tag card-tag--red">
             <i data-feather="circle"></i>
             130
         </span>
     </div>
-    <img class="card-img" src="/img/ph1.jpg" alt="">
+    <img class="card-img" src="ph1.jpg" alt="">
     <div class="card-content">
         <h3 class="card-title"> <%= website.title %></h3>
-        <p class="card-desc"><%= website.description %></p>
+        <% if (website.description) { %>
+            <p class="card-desc"><%= website.description %></p>
+        <% } %>
         <a class="card-more" href="#">Lire la suite</a>
     </div>
     <footer class="card-actions">
