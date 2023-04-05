@@ -10,7 +10,8 @@ router.get('/', mainController.home);
 router.get('/mentions-legales', mainController.notices)
 router.get('/plan', mainController.map)
 router.get('/contact', mainController.contact)
-router.get('/tomates', websitesController.list)
+
+router.get('/tomates', websitesController.all)
 router.get('/tomates/denoncer', websitesController.denouncePage)
 router.post('/tomates/denoncer', websitesController.denounceAction)
 router.get('/tomates/:slug', websitesController.detail)

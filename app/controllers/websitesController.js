@@ -1,6 +1,6 @@
 
 const websitesController = {
-    list: function(req, res) {
+    all: function(req, res) {
         res.send('test tomates');
     },
     //fiaire un eroute paramétrée

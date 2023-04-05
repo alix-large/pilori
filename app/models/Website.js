@@ -8,40 +8,14 @@ class WebSite {
     #level;
     // dans le constructor on construit l'instance
     // on assigne nos propriétés indirectement en appelant les setter
-        constructor(title, description, address, device, level) {
-            this.title= title;
-            this.description= description;
-            this.address= address;
-            this.device = device;
-            this.level = level;
+        constructor(config) {
+            this.title= config.title;
+            this.description= config.description;
+            this.address= config.address;
+            this.device = config.device;
+            this.level = config.level;
         }
-    // tests de validation des données
-    set title(value) {
-        if (typeof value !== 'string' || value.length === 0) {
-            throw new Error('Le nom doit être une chaîne de caractère non vide');
-        }
-        this.#title = value;
-    }
-
-    set description(value) {
-        this.#description = value;
-    }
-
-    set address(value) {
-        if (value.length === 0 || !validator.isURL(value) ) {
-            throw new Error('Adresse invalide : l\'adresse doit être une adresse de site internet. Exemple :https://nomdedomaine.com');
-        }
-        this.#address = value;
-    }
-
-    set device(value) {
-        this.#device = value;
-    }
-
-    set level(value) {
-        this.#level = value;
-    }
-
+    
     get title() {
         return this.#title;
     }
@@ -60,6 +34,42 @@ class WebSite {
 
     get level() {
         return this.#level;
+    }
+
+    // tests de validation des données
+    set title(value) {
+        console.log(value);
+        if (typeof value !== 'string' || value.length === 0) {
+            throw new Error('Le nom doit être une chaîne de caractère non vide');
+        }
+        this.#title = value;
+    }
+
+    set description(value) {
+        this.#description = value;
+    }
+
+    set address(value) {
+        if (value.length === 0 || !validator.isURL(value) ) {
+            throw new Error('Adresse invalide : l\'adresse doit être une adresse de site internet. Exemple :https://nomdedomaine.com');
+        }
+        this.#address = value;
+    }
+
+    set device(value) {
+        const allowedValues = ['Mobile', 'Ordinateur', 'Lecteur d\'écran'];
+        if (typeof value !== 'undefined' && !allowedValues.includes(value)) {
+            throw new Error(`3 valeurs autorisées : ${allowedValues.join(', ')}`);
+        }
+        this.#device = value;
+    }
+
+    set level(value) {
+        const allowedValues = ['Bloquant', 'Gênant', 'Casse-tête'];
+        if (typeof value !== 'undefined' && !allowedValues.includes(value)) {
+          throw new Error(`3 valeurs autorisées : ${allowedValues.join(', ')}`);
+    }
+    this.#level = value;
     }
 }
 

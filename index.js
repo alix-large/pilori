@@ -1,15 +1,14 @@
 import express from 'express';
 import * as dotenv from "dotenv";
 import session from 'express-session';
-import validator from 'validator';
 import WebSite from './app/models/Website.js';
-import WebSites from './app/data/websites.js';
+// import WebSites from './app/data/websites.js';
+import router from './app/router.js'
 
-const test = new WebSite('fssd', 'ce site blabla', 'https://github.com/', 'mobile', 'grave');
-console.log(test.title);
-console.log(WebSites);
+import websites from './app/data/websites.js';
 
-import router from './app/router.js';
+// console.log(websites);
+console.log(websites[3].title);
 
 dotenv.config();
 

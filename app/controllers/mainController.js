@@ -1,7 +1,10 @@
+import websites from "../data/websites.js";
 
 const mainController = {
     home: function(req, res) {
-        res.send('test route');
+        res.render('list', { 
+            websites : websites.slice(0, 2), 
+        });
     },
 
     notices: function(req, res) {
