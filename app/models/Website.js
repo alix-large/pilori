@@ -1,4 +1,6 @@
+import slugify from "slugify";
 import validator from "validator";
+
 
 class WebSite {
     #title;
@@ -34,6 +36,12 @@ class WebSite {
 
     get level() {
         return this.#level;
+    }
+
+    get slug () {
+       const title= this.title;
+       const slug = slugify(title, {lower:true});
+       return slug;
     }
 
     // tests de validation des données

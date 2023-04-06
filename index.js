@@ -1,14 +1,13 @@
 import express from 'express';
+import slugify from 'slugify';
 import * as dotenv from "dotenv";
 import session from 'express-session';
 import WebSite from './app/models/Website.js';
-// import WebSites from './app/data/websites.js';
 import router from './app/router.js'
 
 import websites from './app/data/websites.js';
 
-// console.log(websites);
-// console.log(websites[3].title);
+
 
 dotenv.config();
 
