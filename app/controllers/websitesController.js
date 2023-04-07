@@ -5,29 +5,39 @@ console.log(websites);
 
 const websitesController = {
     all: function(req, res) {
+            // si une recherche est faite
             if (req.query.search) {
                 const filteredWebsites = websites.filter(element => element.title.toLowerCase().includes(req.query.search.toLowerCase()));
-                // console.log(req.query.search, filteredWebsites);
+                // et qu'elle donne lieu à des résultats (taille supérieur à zero)
+                if(filteredWebsites.length > 0) {
+                    res.render('listing', {
+                        websites : filteredWebsites,
+                        title : 'Résultats de la recherche',
+                    });
+                }
+                //ou aucun résultat
+                else {
+                    res.render('listing', {
+                        websites,
+                        title : 'Aucun résultat',
+                    });
+                }
+            }
+            //ou pas de recherche
+            else{
                 res.render('listing', {
-                    websites : filteredWebsites,
-                    title : 'Résultats',
+                    title : 'Toutes les tomates',
+                    websites,
                 });
-            }       
-            else {
-            res.render('listing', {
-                websites,
-                title : 'Tous les sites',
-            })
-        }
+            }
     }, 
-    
+
     detail: function(req,res, next) {
         const askedSlug = req.params.slug;
         const foundWebsite = websites.find(element => element.slug === askedSlug);
 
         if (foundWebsite) {
-
-                    res.render('detail', {foundWebsite});
+            res.render('detail', {foundWebsite});
         }
         else {
             next();

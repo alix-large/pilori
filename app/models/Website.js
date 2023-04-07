@@ -39,9 +39,10 @@ class WebSite {
     }
 
     get slug () {
-       const title= this.title;
-       const slug = slugify(title, {lower:true});
-       return slug;
+        return slugify(this.title, {
+            lower: true,
+            strict: true,
+          });
     }
 
     // tests de validation des données

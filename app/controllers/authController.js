@@ -1,6 +1,13 @@
+import validator from 'validator';
+import bcrypt from  'bcrypt'
+import User from '../models/User.js';
+
+export const user = [];
+
+
 const authController = {
     logginPage: function(req, res) {
-        res.send('test page connexion');
+        res.render('loggin');
     },
 
     logginAction: function(req, res) {

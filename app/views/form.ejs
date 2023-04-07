@@ -1,8 +1,9 @@
 <%- include('partials/header') %>
 <section role = "region" aria-label="dénoncer un site accessible" class="segment">
     <h2 class="segment-title">Dénoncer un site inaccessible</h2>
-    <!-- <% if( typeof message !== 'undefined') %>
-    <p role ="alert"><%= message %></p> -->
+    <!-- pour savoir si une valeur existe, on teste son type -->
+    <% if( typeof message !== 'undefined') %>
+    <p role ="alert"><%= message %></p>
     <form method="POST" action="/tomates/denoncer" class="form">
         <label class="form-field">
             Titre du dysfonctionnement
