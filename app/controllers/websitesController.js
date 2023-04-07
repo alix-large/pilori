@@ -37,7 +37,7 @@ const websitesController = {
         const foundWebsite = websites.find(element => element.slug === askedSlug);
 
         if (foundWebsite) {
-            res.render('detail', {foundWebsite});
+            res.render('detail', {website:foundWebsite});
         }
         else {
             next();
@@ -45,18 +45,21 @@ const websitesController = {
     },
 
     denouncePage: function(req, res) {
-        res.render('form');
+        res.render('add-site');
     },
 
     denounceAction: function(req, res) {
-        try{        
+        try{  
+            //quand l'utilisateur soumet un formulaire de dénonciation, on peut recuperer toutes les infos dans req.body      
             const website = new Website(req.body);
             websites.push(website);
             console.log(website);
             res.redirect('/tomates/' + website.slug)
-        } 
-        catch (error){
-            res.render('form', {message: error.message});
+        } catch (error){
+            res.render('add-site', {
+                //tous les objets error ont une propriété message
+                message: error.message,
+            });
         }
     }
 };

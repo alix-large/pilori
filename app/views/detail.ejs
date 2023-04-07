@@ -5,31 +5,24 @@
                 <header class="detail-header">
                     <div class="detail-intro">
                         <h1 class="detail-title">
-                            <%= foundWebsite.title %> au Pilori !
+                            <%= website.title %> au Pilori !
                         </h1>
-                        <h2 class="detail-subtitle"><%= foundWebsite.description %></h2>
                     </div>
-                    <button class="detail-share"><i data-feather="share-2"></i></button>
-                    <span class="detail-counter"><i data-feather="circle"></i> 180</span>
                 </header>
-                <figure class="detail-figure">
-                    <img src="../img/ph-screen.jpg" alt="">
-                    <figcaption class="detail-caption">Dysfonctionnement de Doctolib</figcaption>
-                </figure>
                 <ul class="detail-list">
-                    <li><span class="detail-label">Reporteur</span> : Marie Dupont</li>
-                    <li><span class="detail-label">Type</span> : <%= foundWebsite.level %></li>
-                    <li><span class="detail-label">Support</span> : <%= foundWebsite.device %></li>
+                    <!-- si l'utilisateur a renseigné le champ niveau et donc qu'n a le niveau, on l'affiche, sinon on ne l'affiche pas. Idem pour le champs device et description-->
+                    <% if(website.level) {%>
+                        <li><span class="detail-label">Type</span> : <%= website.level %></li>
+                        <% } %>
+                    <% if(website.device) {%>
+                        <li><span class="detail-label">Support</span> : <%= website.device %></li>
+                    <% } %>
                 </ul>
-                <p class="detail-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aliquid dolore
-                    nam ducimus fugiat non sunt voluptatibus ex pariatur iste expedita accusamus quisquam dicta beatae
-                    laudantium blanditiis quis tenetur recusandae molestias repellendus, alias doloribus. Quaerat,
-                    eligendi sit maiores enim beatae natus labore, sint aliquid architecto pariatur perspiciatis neque
-                    facere amet.</p>
+                <% if(website.description) {%>
+                    <p class="detail-content"><%= website.description %></p>
+                <% } %>
                 <footer class="detail-actions">
-                    <a class="btn" href="<%= foundWebsite.address %>" target="_blank">Voir le dysfonctionnement</a>
-                    <button class="btn"><i data-feather="check"></i> Inaccessibilité corrigée</button>
-                    <button class="btn btn--red"><i data-feather="circle"></i> Lancer une tomate</button>
+                    <a class="btn" href="<%= website.address %>" target="_blank">Voir le dysfonctionnement</a>
                 </footer>
             </article>
             <footer class="segment-actions">

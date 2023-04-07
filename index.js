@@ -6,6 +6,7 @@ import WebSite from './app/models/Website.js';
 import router from './app/router.js'
 
 import websites from './app/data/websites.js';
+import mainController from './app/controllers/mainController.js';
 
 
 
@@ -26,6 +27,8 @@ app.use(session({
     secret: process.env.APP_SECRET, // ajoute une part d'aléatoire dans la génération des id de session imprédictible
     saveUninitialized: true, // génère un id de session pour tous ceux qui n'en ont pas encore
 }));
+
+router.use(mainController.notFound);
 
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
