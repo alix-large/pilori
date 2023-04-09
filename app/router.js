@@ -3,6 +3,7 @@ import mainController from './controllers/mainController.js';
 import websitesController from './controllers/websitesController.js';
 import userController from './controllers/userController.js';
 import authController from './controllers/authController.js';
+import isLogged from './middlewares/isLogged.js';
 
 const router = express.Router();
 
@@ -21,6 +22,9 @@ router.post('/connexion', authController.logginAction);
 router.get('/inscription', authController.signupPage);
 router.post('/inscription', authController.signupAction);
 router.get('/deconnexion', authController.loggoutPage);
+router.get('/deconnexion', isLogged, authController.loggoutPage);
+
+router.get('/profil', isLogged, userController.profilPage);
 
 router.get('/profil', userController.profilPage);
 //quelque soit le chemin demandé, si aucune route n'a matché, c'ets la methode Not Found qui ser aexecuté

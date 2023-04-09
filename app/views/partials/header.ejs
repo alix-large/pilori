@@ -11,27 +11,39 @@
 </head>
 
 <body>
-    <header class="header">
-        <a class="logo" href="/" title="Retour à l'accueil">
-            <img class="logo-img" src="/logo.svg" alt="PilOri">
+    <!-- liens d'accès rapide -->
+    <nav role="navigation" aria-label="Accès rapide" class="skip-links">
+        <ul>
+            <li><a href="#main">Contenu</a></li>
+            <li><a href="#menu">Menu</a></li>
+        </ul>
+    </nav>
+    <header class="header" role="banner">
+        <a class="logo" href="/" title="Retour à l'accueil Pilori">
+            <img class="logo-img" src="/logo.svg" alt="">
         </a>
-        <nav class="menu">
+        <nav class="menu" role="navigation" aria-label="Menu principal">
             <a class="menu-link" href="/tomates">Toutes les tomates</a>
             <a class="menu-link" href="/tomates/denoncer">Dénoncer</a>
         </nav>
         <div class="header-tools">
             <form action ="/tomates" method="GET" class="search" role="search">
-                <input name="search" class="search-input" type="search" aria-label="Rechercher" placeholder="Rechercher..." >
+                <label for="search-input-form" class="sr-only">Rechercher</label>
+                <input name="search" class="search-input" type="search" aria-label="Rechercher par mots-clefs" placeholder="Rechercher..." >
                 <button class="search-submit" type="submit">
-                    <i data-feather="search"></i>
+                    <i role="img" focusable="false"  aria-hidden="true" data-feather="search"></i> <span class="sr-only">Rechercher</span>
                 </button>
             </form>
             <div class="account">
-                <a id="menuToggler" class="account-link account-link--mobile" href="#"><i data-feather="menu"></i></a>
-                <a id="searchToggler" class="account-link account-link--mobile" href="#"><i
-                        data-feather="search"></i></a>
-                <a class="account-link" href="#"><i data-feather="user"></i></a>
-                <a class="account-link" href="#"><i data-feather="log-out"></i></a>
+                <a id="menuToggler" class="account-link account-link--mobile" href="#"><i data-feather="menu" role="img" aria-hidden="true" focusable="false" aria-label = "Menu"></i></a>
+                <a id="searchToggler" class="account-link account-link--mobile" href="#"><i data-feather="search" role="img" aria-hidden="true" focusable="false" aria-label = "Rechercher"></i></a>
+                    <% if (isLogged) { %>
+                        <a class="account-link" href="/profil" title="Profil"><i data-feather="user" role="img" aria-hidden="true" focusable="false"></i></a>
+                        <a class="account-link" href="/deconnexion" title="Déconnexion"><i data-feather="log-out" role="img" aria-hidden="true" focusable="false"></i></a>
+                    <% } else { %>
+                        <a class="account-link" href="/connexion" title="Connexion"><i data-feather="log-in" role="img" aria-hidden="true" focusable="false"></i></a>
+                        <a class="account-link" href="/inscription" title="Inscription"><i data-feather="user-plus" role="img" aria-hidden="true" focusable="false"></i></a>
+                    <% } %>
             </div>
         </div>
     </header>

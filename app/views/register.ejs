@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+<main class="content">
+    <h1 class="content-title">Inscription</h1>
+    <section class="segment">
+    <h2>Créez un compte, vous pourrez ensuite vous connecter.</h2>
+      <form method="POST" action="/inscription" class="form">
+        <% if (typeof alert !== 'undefined') { %>
+            <p class="message message--error" role="alert">Erreur : <%= alert %></p>
+          <% } %>
+        <label class="form-field">
+          Email <span title="Champ obligatoire">*</span>
+          <input type="text" placeholder="Votre email" class="form-input" name="email" required>
+        </label>
+        <label class="form-field">
+          Mot de passe <span title="Champ obligatoire">*</span><br>
+          Au moins 12 caractères et au moins 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial
+          <input type="password" placeholder="Mot de passe" class="form-input" minlength="12" name="password" required>
+        </label>
+        <div class="segment-actions">
+          <button type="submit" class="btn">S'inscrire</button>
+        </div>
+      </form>
+    </section>
+  </main>
+<%- include('partials/footer') %>

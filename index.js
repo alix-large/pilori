@@ -2,13 +2,10 @@ import express from 'express';
 import slugify from 'slugify';
 import * as dotenv from "dotenv";
 import session from 'express-session';
-import WebSite from './app/models/Website.js';
-import router from './app/router.js'
+import router from './app/router.js';
+import addUserData from './app/middlewares/addUser.data.js';
 
-import websites from './app/data/websites.js';
 import mainController from './app/controllers/mainController.js';
-
-
 
 dotenv.config();
 
@@ -20,7 +17,6 @@ app.set('views', './app/views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./inte-pilori/public'));
-app.use(router);
 
 app.use(session({
     resave: true, // la session est réenregistrée meme si elle n'est pas modifiée
@@ -28,7 +24,10 @@ app.use(session({
     saveUninitialized: true, // génère un id de session pour tous ceux qui n'en ont pas encore
 }));
 
-router.use(mainController.notFound);
+app.use(addUserData);
+app.use(router);
+
+// router.use(mainController.notFound);
 
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);

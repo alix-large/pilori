@@ -1,19 +1,19 @@
-
+import validator from "validator";
 
 class User {
     #email;
-    #password;
+    #hash;
 
     constructor(config) {
         this.email = config.email;
-        this.password = config.password;
+        this.hash = config.hash;
     }
 
     get email (){
         return this.#email;
     }
-    get password (){
-        return this.#password;
+    get hash (){
+        return this.#hash;
     }
 
     set email(value) {
@@ -23,11 +23,11 @@ class User {
         this.#email = value;
     }
     
-    set password(value) {
+    set hash(value) {
         if (!value) {
             throw new Error('Mot de passe invalide');
         }
-        this.#password = value;
+        this.#hash = value;
     }
 }
 
