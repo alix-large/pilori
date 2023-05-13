@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PilOri</title>
+    <title>Accueil - PilOri</title>
     <link rel="stylesheet" href="/index.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <script src="/index.js" type="module" defer></script>
+    <script src="/index.js" type="module"></script>
 </head>
 
 <body>
@@ -18,17 +18,20 @@
             <li><a href="#menu">Menu</a></li>
         </ul>
     </nav>
-    <header class="header" role="banner">
+    <!-- landmark role="banner" unique dans la page -->
+    <header role="banner" class="header" >
         <a class="logo" href="/" title="Retour à l'accueil Pilori">
             <img class="logo-img" src="/logo.svg" alt="">
         </a>
+        <!-- landmark role="navigation" aria-label pour les lecteurs d'écrans -->
         <nav class="menu" role="navigation" aria-label="Menu principal">
             <a class="menu-link" href="/tomates">Toutes les tomates</a>
             <a class="menu-link" href="/tomates/denoncer">Dénoncer</a>
         </nav>
         <div class="header-tools">
+            <!-- landmark role="search" -->
             <form action ="/tomates" method="GET" class="search" role="search">
-                <label for="search-input-form" class="sr-only">Rechercher</label>
+                <!--Libellé pour les lecteurs d'écrans : aria-label -->
                 <input name="search" class="search-input" type="search" aria-label="Rechercher par mots-clefs" placeholder="Rechercher..." >
                 <button class="search-submit" type="submit">
                     <i role="img" focusable="false"  aria-hidden="true" data-feather="search"></i> <span class="sr-only">Rechercher</span>
