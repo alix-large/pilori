@@ -1,8 +1,9 @@
 <%- include('partials/header') %>
-<main class="content">
+<main role="main" class="content">
     <h1 class="content-title"><%= title %></h1>
-    <section class="segment">
+    <section role="region" aria-label="listes des sites web dénoncés" class="segment">
             <div class="segment-tools">
+            <!-- Todo : ally du bouton mosaique/liste -->
             <button class="btn btn--view-mode" data-mode="list" title="Affichage en liste"><i
                     data-feather="list"></i></button>
             <button class="btn btn--view-mode btn--hidden" data-mode="grid" title="Affichage en mosaïque"><i

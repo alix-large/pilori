@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
-<main class="content">
+<main role="main" class="content">
     <h1 class="content-title">Inscription</h1>
-    <section class="segment">
+    <section role="region" aria-label="S'inscrire" class="segment">
     <h2>Créez un compte, vous pourrez ensuite vous connecter.</h2>
       <form method="POST" action="/inscription" class="form">
         <% if (typeof alert !== 'undefined') { %>
@@ -9,6 +9,7 @@
           <% } %>
         <label class="form-field">
           Email <span title="Champ obligatoire">*</span>
+          <span class="form-field-help">Format attendu : nom@domaine.fr</span>
           <input type="text" placeholder="Votre email" class="form-input" name="email" required>
         </label>
         <label class="form-field">

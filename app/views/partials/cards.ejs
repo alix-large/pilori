@@ -1,27 +1,43 @@
 <article class="card">
-    <div class="card-tags">
-        <% if (website.level) { %>
-        <span class="card-tag">
-            <%= website.level %>
-        </span>
-        <% } %>
-        <span class="card-tag card-tag--red">
-            <i data-feather="circle"></i>
-            130
-        </span>
-    </div>
     <img class="card-img" src="ph1.jpg" alt="">
     <div class="card-content">
         <h3 class="card-title"> <%= website.title %></h3>
+        <div class="card-tags">
+            <!-- Texte "Dénoncé comme étant" caché visuellement -->
+            <span class="sr-only">Dénoncé comme étant</span>
+            <% if (website.level) { %>
+            <span class="card-tag">
+                <%= website.level %>
+            </span>
+            <% } %>
+            <span class="card-tag card-tag--red">
+                <i data-feather="circle"></i>
+                130
+            <span class="sr-only">Tomates lancées</span>
+        </div>
         <% if (website.description) { %>
             <p class="card-desc"><%= website.description %></p>
         <% } %>
-        <a class="card-more" href="/tomates/<%= website.slug %>">Lire la suite</a>
+        <!-- Texte "de l'article sur + titre du site" caché visuellement -->
+        <a class="card-more" href="/tomates/<%= website.slug %>">Lire la suite <span class="sr-only"> de l'article sur <%= website.title %></span></a>
     </div>
     <footer class="card-actions">
-        <a class="card-link" href="#">Consulter le site</a>
-        <button class="card-btn card-btn--red"><i data-feather="circle"></i></button>
-        <button class="card-btn card-btn--light"><i data-feather="check"></i></button>
-        <button class="card-btn card-btn--dark"><i data-feather="share-2"></i></button>
+        <!-- Texte "titre du site" caché visuellement -->
+        <a class="card-link" href="#">Consulter le site <span class="sr-only"><%= website.title %></span></a>
+        <!-- ici, on rajoute un attribut aria-expanded pour signaler que le bouton peut ouvrir/fermer un panneau -->
+        <button class="card-btn card-btn--red">
+            <i role="img" focusable="false"  data-feather="circle" aria-hidden="true"></i>
+            <span class="sr-only">Lancer une tomate</span>
+        </button>
+        <button class="card-btn card-btn--light">
+            <i role="img" focusable="false"  data-feather="check" aria-hidden="true"></i>
+            <span class="sr-only">Valider le site</span>
+        </button>
+        <!-- Texte "Partager" caché visuellement -->
+        <!-- todo : on rajoute un attribut aria-expanded pour signaler que le bouton peut ouvrir/fermer un panneau -->
+        <button class="card-btn card-btn--dark">
+            <i role="img" focusable="false"  data-feather="share-2" aria-hidden="true"></i>
+            <span class="sr-only">Partager</span>
+        </button>
     </footer>
 </article>

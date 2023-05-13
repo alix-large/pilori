@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
-<main class="content">
+<main role="main" class="content">
     <h1 class="content-title">PilOri</h1>
-    <section class="segment">
+    <section role="region" aria-label="À vos tomates" class="segment">
         <h2 class="segment-title">À vos tomates</h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit eos eum nisi similique omnis amet ex,
             provident, aperiam incidunt, commodi dolorum ad veritatis beatae fuga dolorem perspiciatis totam quos.
@@ -12,9 +12,10 @@
             <a class="btn" href="/tomates/denoncer">Commencer la dénonciation</a>
         </div>
     </section>
-    <section class="segment">
+    <section role="region" aria-label="Les pires !" class="segment">
         <h2 class="segment-title">Les pires !</h2>
         <div class="segment-tools">
+            <!-- Todo : ally du bouton mosaique/liste ? -->
             <button class="btn btn--view-mode" data-mode="list" title="Affichage en liste"><i
                     data-feather="list"></i></button>
             <button class="btn btn--view-mode btn--hidden" data-mode="grid" title="Affichage en mosaïque"><i
