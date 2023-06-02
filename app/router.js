@@ -27,7 +27,6 @@ router.get('/deconnexion', isLogged, authController.loggoutPage);
 router.get('/profil', isLogged, userController.profilPage);
 
 router.get('/profil', userController.profilPage);
-//quelque soit le chemin demandé, si aucune route n'a matché, c'ets la methode Not Found qui ser aexecuté
 router.use(mainController.notFound);
 
 

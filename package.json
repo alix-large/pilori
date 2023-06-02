@@ -1,7 +1,6 @@
 {
-  "name": "s06-pilori-alix-large",
+  "name": "pilori",
   "version": "1.0.0",
-  "description": "Cette saison on a vu comment créer des serveur HTTP et comment faire un site dynamique en respectant l'architecture MVC.",
   "main": "index.js",
   "type": "module",
   "scripts": {
