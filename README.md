@@ -43,6 +43,7 @@ git submodule init
 git submodule update --recursive --remote
 ```
 Cela récupérera le sous-module "inte-pilori" et placera son contenu dans le répertoire approprié à l'intérieur de votre projet.
+A noter : L'accessibilité n'a pas été faite by design dans le submodule mais a posteriori dans le projet Pilori.
 
 # Lancez l'application
 En utilisant la commande suivante :`npm start`
