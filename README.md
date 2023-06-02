@@ -1,3 +1,5 @@
+![tag](./Captures/node-express.svg)
+
 # Pilori
 
 Pilori est un projet web "fil rouge" développé dans le cadre de ma formation. Il s'agit d'un site web qui vise à dénoncer les sites inaccessibles aux personnes en situation de handicap. Le projet utilise l'architecture MVC (Modèle-Vue-Contrôleur) pour organiser et structurer le code de manière claire et maintenable.
