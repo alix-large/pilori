@@ -40,7 +40,7 @@ Assurez-vous que vous avez déjà cloné le dépôt principal du projet, comme i
 Initialisez et mettez à jour le sous-module en utilisant la commande suivante :
 ```
 git submodule init
-git submodule update
+git submodule update --recursive --remote
 ```
 Cela récupérera le sous-module "inte-pilori" et placera son contenu dans le répertoire approprié à l'intérieur de votre projet.
 
