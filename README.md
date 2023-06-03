@@ -2,7 +2,8 @@
 
 # Pilori
 
-Pilori est un projet web "fil rouge" développé dans le cadre de ma formation. Il s'agit d'un site web qui vise à dénoncer les sites inaccessibles aux personnes en situation de handicap. Le projet utilise l'architecture MVC (Modèle-Vue-Contrôleur) pour organiser et structurer le code de manière claire et maintenable.
+Pilori est un projet web "fil rouge" développé dans le cadre de ma formation Dev Web et accessibilité en 2023. Il s'agit d'un site web qui vise à dénoncer les sites inaccessibles aux personnes en situation de handicap.  Il permet aux utilisateurs de signaler les sites problématiques et de partager leurs expériences. 
+Le projet utilise l'architecture MVC (Modèle-Vue-Contrôleur) pour organiser et structurer le code de manière claire et maintenable.
 
 ![Page d'accueil](./Captures/accueil-pilori.png)
 ![Formulaire de connexion](./Captures/formulaire-connexion.png)
@@ -22,9 +23,6 @@ Les dépendances suivantes sont utilisées dans ce projet :
 - express-session: ^1.17.3
 - slugify: ^1.6.6
 - validator: ^13.9.0
-
-## Description
-Pilori est un site web conçu pour dénoncer les sites qui ne respectent pas les standards d'accessibilité pour les personnes en situation de handicap. Il permet aux utilisateurs de signaler les sites problématiques et de partager leurs expériences. Le projet suit l'architecture MVC, ce qui facilite la séparation des responsabilités et la gestion du code.
 
 ## Installation
 Pour installer et exécuter ce projet localement, suivez les étapes suivantes :
